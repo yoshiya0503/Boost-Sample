@@ -1,4 +1,5 @@
 #include "student.h"
+#include "func.h"
 
 std::istream& read_hw(std::istream& in, std::vector<double>& hw) {
   if (in) {
@@ -12,7 +13,6 @@ std::istream& read_hw(std::istream& in, std::vector<double>& hw) {
   return in;
 }
 
-
 std::istream& read(std::istream& is, Student& s) {
   std::cout << "prease input homework" << std::endl;
   is >> s.name >> s.mid >> s.last;
@@ -20,3 +20,6 @@ std::istream& read(std::istream& is, Student& s) {
   return is;
 }
 
+bool fgrade(Student& s) {
+  return grade(s.mid, s.last, median(s)) < 60;
+}

@@ -10,4 +10,6 @@ struct Student {
   std::vector<double> homework;
 };
 std::istream& read(std::istream&, Student&);
+
+bool fgrade(const Student&);
 #endif

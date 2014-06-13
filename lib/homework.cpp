@@ -22,7 +22,7 @@ int main() {
   cout << "prease input mid and last" << endl;
 
   read(cin, student);
-  double med = median(student.homework);
+  double med = median(student);
   
   try {
     double g = grade(student.mid, student.last, med);
