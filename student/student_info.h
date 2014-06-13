@@ -23,40 +23,13 @@ private:
     }
 
 public:
-    bool valid() const {
-        return !this->homework.empty();
-    }
-    std::string getName() const {
-        return this->name;
-    }
 
-    double grade() {
-        double med = this->median();
-        return 0.2 * this->mid + 0.4 * this->last + 0.4 * med; 
-    }
-
-    double median() {
-        typedef std::vector<double>::size_type vec_sz;
-        vec_sz size = this->homework.size();
-        if (size == 0) {
-            std::cout << std::endl;
-            throw std::domain_error("blank of median");
-        }
-        std::sort(this->homework.begin(), this->homework.end());
-        vec_sz med = size / 2;
-        return (size % 2 != 0) ? this->homework[med] : (this->homework[med] + this->homework[med - 1]) / 2;
-    }
-
-    bool isFailed() {
-        return this->grade() < 60;
-    }
-   
-    std::istream& read(std::istream& is) {
-        std::cout << "prease input student data [name, mid, last, [homeworks]]" << std::endl;
-        is >> this->name >> this->mid >> this->last;
-        this->read_hw(is, this->homework);
-        return is;
-    }
+    bool valid() const;
+    std::string getName() const;
+    double grade();
+    double median();
+    bool isFailed();
+    std::istream& read(std::istream& is);
 };
 
 #endif
