@@ -1,5 +1,8 @@
 #include "student_info.h"
 
+Student_info::Student_info() : mid(0), last(0){
+}
+
 bool Student_info::valid() const {
     return !this->homework.empty();
 }
