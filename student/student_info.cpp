@@ -32,7 +32,6 @@ bool Student_info::isFailed() {
 }
 
 std::istream& Student_info::read(std::istream& is) {
-    std::cout << "prease input student data [name, mid, last, [homeworks]]" << std::endl;
     is >> this->name >> this->mid >> this->last;
     this->read_hw(is, this->homework);
     return is;

@@ -10,6 +10,8 @@ int main() {
     Student_info s;
     vector<Student_info> students;
     string::size_type maxlen = 0;
+
+    std::cout << "prease input student data [name, mid, last, [homeworks]]" << std::endl;
     while (s.read(cin)) {
         maxlen = max(maxlen, s.getName().size());
         students.push_back(s);
